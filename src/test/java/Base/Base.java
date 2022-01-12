@@ -1,10 +1,14 @@
 package Base;
 
+import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.List;
+import java.util.Map;
 
 public class Base {
 
@@ -65,6 +69,11 @@ public class Base {
     public void elegir(String numero, By locator) {
         Select selectList = new Select(findElement(locator));
         selectList.selectByValue(numero);
+    }
+
+    public static String getValueFromDataTable(DataTable dataTable, String title) {
+        List<Map<String, String>> list = dataTable.asMaps();
+        return (String)((Map)list.get(0)).get(title);
     }
 
 }

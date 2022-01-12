@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import Step.RegistroStep;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
@@ -17,8 +18,8 @@ public class RegistroStepDef {
     }
 
     @Cuando("elijo las opciones para el viaje y doy click en el boton buscar viajes")
-    public void elijoLasOpcionesParaElViajeYDoyClickEnElBotonBuscarViajes() {
-        regStep.escogerViaje();
+    public void elijoLasOpcionesParaElViajeYDoyClickEnElBotonBuscarViajes(DataTable dataTable){
+        regStep.escogerViaje(dataTable);
     }
 
     @Entonces("elijo la fecha del viaje")

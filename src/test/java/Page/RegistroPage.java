@@ -26,11 +26,16 @@ public class RegistroPage extends Base {
         regPage.maximize();
     }
 
-    public void escogerViaje() {
-        regPage.elegir("3", regPath.elegirDestino);
-        regPage.elegir("31", regPath.elegirRuta);
-        regPage.elegir("2", regPath.elegirTren);
+    public void escogerViaje(String valueDestino, String valueRuta, String valueTren) {
+//        regPage.elegir("3", regPath.elegirDestino);
+//        regPage.elegir("31", regPath.elegirRuta);
+//        regPage.elegir("2", regPath.elegirTren);
+//        regPage.click(regPath.btnSearch);
+        regPage.elegir(valueDestino,regPath.elegirDestino);
+        regPage.elegir(valueRuta,regPath.elegirRuta);
+        regPage.elegir(valueTren,regPath.elegirTren);
         regPage.click(regPath.btnSearch);
+
     }
 
     public void elegirFecha(){

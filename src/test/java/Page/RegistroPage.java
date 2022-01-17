@@ -51,22 +51,72 @@ public class RegistroPage extends Base {
     }
 
     public void llenarFormulario(){
-        regPage.type("Orlando", regPath.firstName);
-        regPage.type("Quispe", regPath.lastName);
-        regPage.click(regPath.fechaCumple);
-        regPage.elegir("4", regPath.mesCumple);
-        regPage.elegir("1999", regPath.añoCumple);
-        regPage.click(regPath.diaCumple);
-        regPage.elegir("PER",regPath.nacionalidad);
-        regPage.elegir("DNI",regPath.documento);
-        regPage.type("72251553",regPath.docNumero);
-        regPage.elegir("M",regPath.sexo);
-        regPage.findElement(regPath.numCelular).clear();
-        regPage.type("+51 993969806",regPath.numCelular);
-        regPage.type("orlandoqf123@gmail.com",regPath.email);
-        regPage.type("orlandoqf123@gmail.com",regPath.confirEmail);
-        regPage.click(regPath.agreeBtn);
+       // type("Orlando", regPath.firstName);
+       // type("Quispe", regPath.lastName);
+       // click(regPath.fechaCumple);
+       // regPage.elegir("4", regPath.mesCumple);
+       // regPage.elegir("1999", regPath.añoCumple);
+       // click(regPath.diaCumple);
+       // elegir("PER",regPath.nacionalidad);
+       // elegir("DNI",regPath.documento);
+       // type("72251553",regPath.docNumero);
+       // elegir("M",regPath.sexo);
+       // findElement(regPath.numCelular).clear();
+       // type("993969806",regPath.numCelular);
+       // type("orlandoqf123@gmail.com",regPath.email);
+       // type("orlandoqf123@gmail.com",regPath.confirEmail);
+        //click(regPath.agreeBtn);
     }
+
+    public void llenarNombre(String nombre) {
+        regPage.type(nombre, regPath.firstName);
+    }
+
+    public void llenarApellido(String apellido) {
+        regPage.type(apellido, regPath.lastName);
+    }
+
+    public void llenarmesCumple(String mesCumple) {
+        regPage.click(regPath.fechaCumple);
+        regPage.elegir(mesCumple, regPath.mesCumple);
+    }
+    public void llenarañoCumple(String añoCumple) {
+        regPage.elegir(añoCumple, regPath.añoCumple);
+        regPage.click(regPath.diaCumple);
+    }
+
+
+    public void llenarNacionalidad(String nacionalidad) {
+        regPage.elegir(nacionalidad,regPath.nacionalidad);
+    }
+
+    public void llenardocumento(String documento) {
+        regPage.elegir(documento,regPath.documento);
+    }
+
+    public void llenardocNumero(String docNumero) {
+        regPage.type(docNumero,regPath.docNumero);
+    }
+
+    public void llenarsexo(String sexo) {
+        regPage.elegir(sexo,regPath.sexo);
+    }
+
+    public void llenarnumCelular(String numCelular) {
+        regPage.type(numCelular,regPath.numCelular);
+    }
+
+    public void llenaremail(String email) {
+        regPage.type(email,regPath.email);
+    }
+
+    public void llenarconfirnEmail(String confirnEmail) {
+       regPage.type(confirnEmail,regPath.confirEmail);
+       regPage.click(regPath.agreeBtn);
+    }
+
+
+
 }
 
 

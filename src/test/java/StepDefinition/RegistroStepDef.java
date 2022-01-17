@@ -33,7 +33,7 @@ public class RegistroStepDef {
     }
 
     @Entonces("lleno el formulario con mis datos y doy click en el boton continue")
-    public void llenoElFormularioConMisDatosYDoyClickEnElBotonContinue() {
-        regStep.llenarFormulario();
+    public void llenoElFormularioConMisDatosYDoyClickEnElBotonContinue(DataTable dataTable) {
+        regStep.llenarFormulario(dataTable);
     }
 }

@@ -116,7 +116,64 @@ public class RegistroPage extends Base {
     }
 
 
+    public void llenarNombre2(String nombre2) {
+        regPage.click(regPath.pasajero2Btn);
+        regPage.type(nombre2, regPath.firstName2);
+    }
 
+    public void llenarApellido2(String apellido2) {
+        regPage.type(apellido2, regPath.lastName2);
+    }
+
+    public void llenarmesCumple2(String mesCumple2) {
+        regPage.click(regPath.fechaCumple2);
+        regPage.elegir(mesCumple2, regPath.mesCumple2);
+    }
+
+    public void llenarañoCumple2(String añoCumple2) {
+        regPage.elegir(añoCumple2, regPath.añoCumple2);
+        regPage.click(regPath.diaCumple2);
+    }
+
+    public void llenarNacionalidad2(String nacionalidad2) {
+        regPage.elegir(nacionalidad2,regPath.nacionalidad2);
+    }
+
+    public void llenardocumento2(String documento2) {
+        regPage.elegir(documento2,regPath.documento2);
+    }
+
+    public void llenardocNumero2(String docNumero2) {
+        regPage.type(docNumero2,regPath.docNumero2);
+    }
+
+    public void llenarsexo2(String sexo2) {
+        regPage.elegir(sexo2,regPath.sexo2);
+    }
+
+    public void llenarnumCelular2(String numCelular2) {
+        regPage.type(numCelular2,regPath.numCelular2);
+    }
+
+    public void llenaremail2(String email2) {
+        regPage.type(email2,regPath.email2);
+    }
+
+    public void llenarconfirnEmail2(String confirnEmail2) {
+        regPage.type(confirnEmail2,regPath.confirEmail2);
+        regPage.click(regPath.agreeBtn2);
+        regPage.click(regPath.continueBtn);
+    }
+
+    public void seleccionarMetodoPago() {
+        regPage.click(regPath.seleccionarTarjeta);
+        regPage.click(regPath.agreeBtnMetodoPago);
+
+    }
+
+    public void clickBtnEntrarNumero() {
+        regPage.click(regPath.enterCardNumber);
+    }
 }
 
 

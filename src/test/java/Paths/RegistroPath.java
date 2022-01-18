@@ -32,6 +32,28 @@ public class RegistroPath extends Base {
     public By email = By.id("txt_mail[suite][cab1][1]");
     public By confirEmail = By.id("txt_mail_conf[suite][cab1][1]");
     public By agreeBtn = By.id("chk_ofertas[suite][cab1][1]");
+    public By pasajero2Btn = By.id("itm1-2");
+    public By firstName2 = By.id("txt_nombre[suite][cab1][2]");
+    public By lastName2 = By.id("txt_apellido[suite][cab1][2]");
+    public By fechaCumple2 = By.id("txt_fecha_nacimiento[suite][cab1][2]");
+    public By mesCumple2 = By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[1]");
+    public By añoCumple2 = By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[2]");
+    public By diaCumple2 = By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[4]/td[4]/a");
+    public By nacionalidad2 = By.id("sel_nacion[suite][cab1][2]");
+    public By documento2 = By.id("sel_tpdoc[suite][cab1][2]");
+    public By docNumero2 = By.id("txt_nroid[suite][cab1][2]");
+    public By sexo2 = By.id("sel_sexo[suite][cab1][2]");
+    public By numCelular2 = By.id("txt_telefono[suite][cab1][2]");
+    public By email2 = By.id("txt_mail[suite][cab1][2]");
+    public By confirEmail2 = By.id("txt_mail_conf[suite][cab1][2]");
+    public By agreeBtn2 = By.id("chk_ofertas[suite][cab1][2]");
+    public By continueBtn = By.id("btnContinuarPas");
+    public By seleccionarTarjeta = By.id("visa");
+    public By agreeBtnMetodoPago = By.id("chk_tercon");
+    public By enterCardNumber = By.id("ingresar_tarjeta");
+
+
+
 
 
 }

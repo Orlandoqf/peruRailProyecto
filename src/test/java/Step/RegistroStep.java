@@ -42,6 +42,18 @@ public class RegistroStep {
         String email = Base.getValueFromDataTable(dataTable,"email");
         String confirnEmail = Base.getValueFromDataTable(dataTable,"confirnEmail");
 
+        String nombre2 = Base.getValueFromDataTable(dataTable,"firstName2");
+        String apellido2 = Base.getValueFromDataTable(dataTable,"lastName2");
+        String mesCumple2 = Base.getValueFromDataTable(dataTable,"mesCumple2");
+        String añoCumple2 = Base.getValueFromDataTable(dataTable,"añoCumple2");
+        String Nacionalidad2 = Base.getValueFromDataTable(dataTable,"Nacionalidad2");
+        String documento2 = Base.getValueFromDataTable(dataTable,"documento2");
+        String docNumero2 = Base.getValueFromDataTable(dataTable,"docNumero2");
+        String sexo2 = Base.getValueFromDataTable(dataTable,"sexo2");
+        String numCelular2 = Base.getValueFromDataTable(dataTable,"numCelular2");
+        String email2 = Base.getValueFromDataTable(dataTable,"email2");
+        String confirnEmail2 = Base.getValueFromDataTable(dataTable,"confirnEmail2");
+
         regPage.llenarNombre(nombre);
         regPage.llenarApellido(apellido);
         regPage.llenarmesCumple(mesCumple);
@@ -53,6 +65,27 @@ public class RegistroStep {
         regPage.llenarnumCelular(numCelular);
         regPage.llenaremail(email);
         regPage.llenarconfirnEmail(confirnEmail);
+        regPage.llenarNombre2(nombre2);
+        regPage.llenarApellido2(apellido2);
+        regPage.llenarmesCumple2(mesCumple2);
+        regPage.llenarañoCumple2(añoCumple2);
+        regPage.llenarNacionalidad2(Nacionalidad2);
+        regPage.llenardocumento2(documento2);
+        regPage.llenardocNumero2(docNumero2);
+        regPage.llenarsexo2(sexo2);
+        regPage.llenarnumCelular2(numCelular2);
+        regPage.llenaremail2(email2);
+        regPage.llenarconfirnEmail2(confirnEmail2);
+
+
+
     }
 
+    public void seleccionarMetodoPago() {
+        regPage.seleccionarMetodoPago();
+    }
+
+    public void clickBtnEntrarNumero() {
+        regPage.clickBtnEntrarNumero();
+    }
 }

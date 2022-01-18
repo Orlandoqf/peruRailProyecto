@@ -36,4 +36,19 @@ public class RegistroStepDef {
     public void llenoElFormularioConMisDatosYDoyClickEnElBotonContinue(DataTable dataTable) {
         regStep.llenarFormulario(dataTable);
     }
+
+    @Entonces("selecciono el metodo de pago y doy click en aceptar los terminos")
+    public void seleccionoElMetodoDePagoYDoyClickEnAceptarLosTerminos() {
+        regStep.seleccionarMetodoPago();
+    }
+
+    @Y("doy click en entrar numero de tarjeta")
+    public void doyClickEnEntrarNumeroDeTarjeta() {
+        regStep.clickBtnEntrarNumero();
+    }
+
+    @Y("lleno los datos de la tarjeta")
+    public void llenoLosDatosDeLaTarjeta() {
+      //  regStep.llenarDatosTarjeta();
+    }
 }

@@ -76,4 +76,7 @@ public class Base {
         return (String)((Map)list.get(0)).get(title);
     }
 
+    public void espera(String numero) throws InterruptedException {
+        Thread.sleep(Long.parseLong(numero));
+    }
 }

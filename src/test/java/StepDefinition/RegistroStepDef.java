@@ -23,22 +23,22 @@ public class RegistroStepDef {
     }
 
     @Entonces("elijo la fecha del viaje")
-    public void elijoLaFechaDelViaje() {
+    public void elijoLaFechaDelViaje() throws InterruptedException {
         regStep.elegirFecha();
     }
 
     @Y("la cantidad de cabinas  y doy click en el boton continuar")
-    public void laCantidadDeCabinasYDoyClickEnElBotonContinuar() {
+    public void laCantidadDeCabinasYDoyClickEnElBotonContinuar() throws InterruptedException {
         regStep.elegirCabina();
     }
 
     @Entonces("lleno el formulario con mis datos y doy click en el boton continue")
-    public void llenoElFormularioConMisDatosYDoyClickEnElBotonContinue(DataTable dataTable) {
+    public void llenoElFormularioConMisDatosYDoyClickEnElBotonContinue(DataTable dataTable) throws InterruptedException {
         regStep.llenarFormulario(dataTable);
     }
 
     @Entonces("selecciono el metodo de pago y doy click en aceptar los terminos")
-    public void seleccionoElMetodoDePagoYDoyClickEnAceptarLosTerminos() {
+    public void seleccionoElMetodoDePagoYDoyClickEnAceptarLosTerminos() throws InterruptedException {
         regStep.seleccionarMetodoPago();
     }
 
@@ -47,8 +47,9 @@ public class RegistroStepDef {
         regStep.clickBtnEntrarNumero();
     }
 
-    @Y("lleno los datos de la tarjeta")
-    public void llenoLosDatosDeLaTarjeta() {
-      //  regStep.llenarDatosTarjeta();
+
+    @Y("verifico las cantidades y los datos ingresados en la compra")
+    public void verificoLasCantidadesYLosDatosIngresadosEnLaCompra() {
+       // regStep.validaciónDeDatos();
     }
 }

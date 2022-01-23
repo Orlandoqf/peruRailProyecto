@@ -2,8 +2,10 @@ package Page;
 
 import Base.Base;
 import Paths.RegistroPath;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 public class RegistroPage extends Base {
@@ -27,10 +29,6 @@ public class RegistroPage extends Base {
     }
 
     public void escogerViaje(String valueDestino, String valueRuta, String valueTren) {
-//        regPage.elegir("3", regPath.elegirDestino);
-//        regPage.elegir("31", regPath.elegirRuta);
-//        regPage.elegir("2", regPath.elegirTren);
-//        regPage.click(regPath.btnSearch);
         regPage.elegir(valueDestino,regPath.elegirDestino);
         regPage.elegir(valueRuta,regPath.elegirRuta);
         regPage.elegir(valueTren,regPath.elegirTren);
@@ -38,37 +36,23 @@ public class RegistroPage extends Base {
 
     }
 
-    public void elegirFecha(){
+    public void elegirFecha() throws InterruptedException {
+        regPage.espera("2000");
         regPage.click(regPath.elegirFecha);
         regPage.elegir("4", regPath.elegirMes);
         regPage.click(regPath.elegirDia);
         regPage.click(regPath.btnTicket);
     }
-    public void elegirCabina(){
+    public void elegirCabina() throws InterruptedException {
+        regPage.espera("2000");
         regPage.elegir("1", regPath.elegirCabina);
         regPage.elegir("2", regPath.elegirCantidadAdultos);
         regPage.click(regPath.btnContinuar);
     }
 
-    public void llenarFormulario(){
-       // type("Orlando", regPath.firstName);
-       // type("Quispe", regPath.lastName);
-       // click(regPath.fechaCumple);
-       // regPage.elegir("4", regPath.mesCumple);
-       // regPage.elegir("1999", regPath.añoCumple);
-       // click(regPath.diaCumple);
-       // elegir("PER",regPath.nacionalidad);
-       // elegir("DNI",regPath.documento);
-       // type("72251553",regPath.docNumero);
-       // elegir("M",regPath.sexo);
-       // findElement(regPath.numCelular).clear();
-       // type("993969806",regPath.numCelular);
-       // type("orlandoqf123@gmail.com",regPath.email);
-       // type("orlandoqf123@gmail.com",regPath.confirEmail);
-        //click(regPath.agreeBtn);
-    }
 
-    public void llenarNombre(String nombre) {
+    public void llenarNombre(String nombre) throws InterruptedException {
+        regPage.espera("2000");
         regPage.type(nombre, regPath.firstName);
     }
 
@@ -116,8 +100,9 @@ public class RegistroPage extends Base {
     }
 
 
-    public void llenarNombre2(String nombre2) {
+    public void llenarNombre2(String nombre2) throws InterruptedException {
         regPage.click(regPath.pasajero2Btn);
+        regPage.espera("2000");
         regPage.type(nombre2, regPath.firstName2);
     }
 
@@ -165,15 +150,27 @@ public class RegistroPage extends Base {
         regPage.click(regPath.continueBtn);
     }
 
-    public void seleccionarMetodoPago() {
+    public void seleccionarMetodoPago() throws InterruptedException {
+        regPage.espera("2000");
+        regPage.findElement(regPath.seleccionarTarjeta);
         regPage.click(regPath.seleccionarTarjeta);
         regPage.click(regPath.agreeBtnMetodoPago);
 
     }
 
     public void clickBtnEntrarNumero() {
+        regPage.findElement(regPath.enterCardNumber);
         regPage.click(regPath.enterCardNumber);
     }
+
+    /*public void validaciónDeDatos() {
+        regPage.click(regPath.ValidarCompra);
+        WebElement validarRuta = regPage.findElement(regPath.validarRuta);
+        Assert.assertEquals("Belmond Andean Explorer", validarRuta.getText());
+        WebElement validarFechaSalida = regPage.findElement(regPath.ValidarFechaSalida);
+        Assert.assertEquals("Wednesday 18 May 2022", validarFechaSalida.getText());
+
+    } */
 }
 
 

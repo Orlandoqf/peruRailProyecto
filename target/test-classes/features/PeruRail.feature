@@ -19,7 +19,6 @@
         | <firstName> | <lastName> |  <mesCumple>  | <añoCumple> | <Nacionalidad> |  <documento>  | <docNumero> | <sexo> |  <numCelular>  | <email> | <confirnEmail> | <firstName2> | <lastName2> |  <mesCumple2>  | <añoCumple2> | <Nacionalidad2> |  <documento2>  | <docNumero2> | <sexo2> |  <numCelular2>  | <email2> | <confirnEmail2> |
       Entonces selecciono el metodo de pago y doy click en aceptar los terminos
       Y doy click en entrar numero de tarjeta
-      Y lleno los datos de la tarjeta
 
       Y verifico las cantidades y los datos ingresados en la compra
 

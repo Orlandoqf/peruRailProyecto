@@ -21,15 +21,15 @@ public class RegistroStep {
 
     }
 
-    public void elegirFecha(){
+    public void elegirFecha() throws InterruptedException {
         regPage.elegirFecha();
     }
 
-    public void elegirCabina(){
+    public void elegirCabina() throws InterruptedException {
         regPage.elegirCabina();
     }
 
-    public void llenarFormulario(DataTable dataTable){
+    public void llenarFormulario(DataTable dataTable) throws InterruptedException {
         String nombre = Base.getValueFromDataTable(dataTable,"firstName");
         String apellido = Base.getValueFromDataTable(dataTable,"lastName");
         String mesCumple = Base.getValueFromDataTable(dataTable,"mesCumple");
@@ -81,11 +81,15 @@ public class RegistroStep {
 
     }
 
-    public void seleccionarMetodoPago() {
+    public void seleccionarMetodoPago() throws InterruptedException {
         regPage.seleccionarMetodoPago();
     }
 
     public void clickBtnEntrarNumero() {
         regPage.clickBtnEntrarNumero();
+    }
+
+    public void validaciónDeDatos(){
+        //regPage.validaciónDeDatos();
     }
 }

@@ -28,8 +28,8 @@ public class RegistroStepDef {
     }
 
     @Y("la cantidad de cabinas  y doy click en el boton continuar")
-    public void laCantidadDeCabinasYDoyClickEnElBotonContinuar() throws InterruptedException {
-        regStep.elegirCabina();
+    public void laCantidadDeCabinasYDoyClickEnElBotonContinuar(DataTable dataTable) throws InterruptedException {
+        regStep.elegirPasajes(dataTable);
     }
 
     @Entonces("lleno el formulario con mis datos y doy click en el boton continue")

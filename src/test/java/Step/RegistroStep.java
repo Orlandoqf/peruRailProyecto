@@ -26,8 +26,12 @@ public class RegistroStep {
         regPage.elegirFecha();
     }
 
-    public void elegirCabina() throws InterruptedException {
-        regPage.elegirCabina();
+    public void elegirPasajes(DataTable dataTable) throws InterruptedException {
+        String cabina = Base.getValueFromDataTable(dataTable,"cabina");
+        String adultos = Base.getValueFromDataTable(dataTable,"adultos");
+        String niños = Base.getValueFromDataTable(dataTable,"niños");
+
+        regPage.elegirPasajes(cabina,adultos,niños);
     }
 
     public void llenarFormulario(DataTable dataTable) throws InterruptedException {
@@ -92,7 +96,7 @@ public class RegistroStep {
         String ruta = Base.getValueFromDataTable(dataTable,"ruta");
         String tren = Base.getValueFromDataTable(dataTable,"tren");
 
-//        Assert.assertTrue(regPage.validaciónDeDestino(destino));
+       // Assert.assertTrue(regPage.validaciónDeDestino(destino));
         Assert.assertTrue(regPage.validaciónDeTren(tren));
         Assert.assertTrue(regPage.validaciónDeRuta(ruta));
 

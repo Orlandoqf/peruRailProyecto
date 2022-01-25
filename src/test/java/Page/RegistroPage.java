@@ -40,10 +40,10 @@ public class RegistroPage extends Base {
         regPage.click(regPath.btnTicket);
     }
 
-    public void elegirCabina() throws InterruptedException {
+    public void elegirPasajes(String valueCabina, String valueAdultos, String valueNiños) throws InterruptedException {
         regPage.esperaPe("2000");
-        regPage.elegir("1", regPath.elegirCabina);
-        regPage.elegir("2", regPath.elegirCantidadAdultos);
+        regPage.elegir(valueCabina, regPath.elegirCabina);
+        regPage.elegir(valueAdultos, regPath.elegirCantidadAdultos);
         regPage.click(regPath.btnContinuar);
     }
 
@@ -161,13 +161,14 @@ public class RegistroPage extends Base {
         regPage.click(regPath.enterCardNumber);
     }
 
-    //TAREA2
-//    public boolean validaciónDeDestino(String destino) {
+//  TAREA2
+// public boolean validaciónDeDestino(String valueDestino) throws InterruptedException {
+//      boolean flag = false;
 //
-//        boolean flag = false;
-//
-//        return flag;
-//    }
+//     regPage.esperaPe("2000");
+//    // String destino = regPage.getText(regPath);
+//      return flag;
+//  }
 
 
     public boolean validaciónDeTren(String valueTren) throws InterruptedException {
@@ -189,14 +190,28 @@ public class RegistroPage extends Base {
 
 
 
-    //TAREA
-    public boolean validaciónDeRuta(String valueruta) {
+
+    public boolean validaciónDeRuta(String valueRuta) {
         boolean flag = false;
         String ruta = regPage.getText(regPath.validarRuta);
         System.out.println(ruta.trim());
         String parts[] = ruta.split(" ");
+
+        String puno = parts[0].replace("(","");
+        String cusco = parts[2].replace(")","");
+        String rutaCompleta = puno +" "+">"+" "+ cusco;
+        if (valueRuta.equals(rutaCompleta)) {
+            flag = true;
+        }
+        else {
+            flag = false;
+            System.out.println("validacion de ruta incorrecta");
+        }
         return flag;
+
     }
+
+
 }
 
 

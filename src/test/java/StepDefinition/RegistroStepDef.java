@@ -49,7 +49,7 @@ public class RegistroStepDef {
 
 
     @Y("verifico las cantidades y los datos ingresados en la compra")
-    public void verificoLasCantidadesYLosDatosIngresadosEnLaCompra() {
-       // regStep.validaciónDeDatos();
+    public void verificoLasCantidadesYLosDatosIngresadosEnLaCompra(DataTable dataTable) throws InterruptedException {
+        regStep.validaciónDeDatos(dataTable);
     }
 }

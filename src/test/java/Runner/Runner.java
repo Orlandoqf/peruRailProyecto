@@ -5,10 +5,10 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-
 @CucumberOptions(
-            features = "src/test/resources/features",
-            glue = ("RegistroStepDef")
+        features = "src/test/resources/features",
+        glue = {""},
+        tags = "@CASO1"
 )
 public class Runner {
 

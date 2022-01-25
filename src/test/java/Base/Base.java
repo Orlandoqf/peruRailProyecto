@@ -71,12 +71,17 @@ public class Base {
         selectList.selectByValue(numero);
     }
 
+    public void elegirPorTexto(String texto, By locator) {
+        Select selectList = new Select(findElement(locator));
+        selectList.selectByVisibleText(texto);
+    }
+
     public static String getValueFromDataTable(DataTable dataTable, String title) {
         List<Map<String, String>> list = dataTable.asMaps();
         return (String)((Map)list.get(0)).get(title);
     }
 
-    public void espera(String numero) throws InterruptedException {
+    public void esperaPe(String numero) throws InterruptedException {
         Thread.sleep(Long.parseLong(numero));
     }
 }

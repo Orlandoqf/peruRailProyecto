@@ -51,9 +51,10 @@ public class RegistroPath extends Base {
     public By seleccionarTarjeta = By.className("visa");
     public By agreeBtnMetodoPago = By.id("chk_tercon");
     public By enterCardNumber = By.id("ingresar_tarjeta");
-    public By validarRuta = By.xpath("//*[@id=\"compra\"]/div/div[2]/div[3]/div[1]/div[2]");
-    public By ValidarCompra = By.xpath("//*[@id=\"compra\"]/a");
-    public By ValidarFechaSalida = By.xpath("//*[@id=\"compra\"]/div/div[2]/div[3]/div[2]/div[2]");
+    public By validarCompra = By.xpath("//*[@id=\"compra\"]/a");
+    public By validarTren = By.xpath("//*[@id=\"compra\"]/div/div[2]/div[3]/div[1]/div[2]");
+    public By validarRuta = By.xpath("//*[@id=\"compra\"]/div/div[2]/div[2]");
+    public By validarFechaSalida = By.xpath("//*[@id=\"compra\"]/div/div[2]/div[3]/div[2]/div[2]");
 
 
 

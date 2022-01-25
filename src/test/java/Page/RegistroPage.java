@@ -2,26 +2,22 @@ package Page;
 
 import Base.Base;
 import Paths.RegistroPath;
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 public class RegistroPage extends Base {
 
     RegistroPath regPath = new RegistroPath();
     RegistroPage regPage;
 
-    public RegistroPage(WebDriver driver){
+    public RegistroPage(WebDriver driver) {
         super(driver);
     }
 
-    public RegistroPage(){
-    super();
+    public RegistroPage() {
+        super();
     }
 
-    public void validarPagina(){
+    public void validarPagina() {
         regPage = new RegistroPage(driver);
         regPage.chromeDriverConnection();
         regPage.visit(regPath.url);
@@ -29,22 +25,23 @@ public class RegistroPage extends Base {
     }
 
     public void escogerViaje(String valueDestino, String valueRuta, String valueTren) {
-        regPage.elegir(valueDestino,regPath.elegirDestino);
-        regPage.elegir(valueRuta,regPath.elegirRuta);
-        regPage.elegir(valueTren,regPath.elegirTren);
+        regPage.elegirPorTexto(valueDestino, regPath.elegirDestino);
+        regPage.elegirPorTexto(valueRuta, regPath.elegirRuta);
+        regPage.elegirPorTexto(valueTren, regPath.elegirTren);
         regPage.click(regPath.btnSearch);
 
     }
 
     public void elegirFecha() throws InterruptedException {
-        regPage.espera("2000");
+        regPage.esperaPe("2000");
         regPage.click(regPath.elegirFecha);
         regPage.elegir("4", regPath.elegirMes);
         regPage.click(regPath.elegirDia);
         regPage.click(regPath.btnTicket);
     }
+
     public void elegirCabina() throws InterruptedException {
-        regPage.espera("2000");
+        regPage.esperaPe("2000");
         regPage.elegir("1", regPath.elegirCabina);
         regPage.elegir("2", regPath.elegirCantidadAdultos);
         regPage.click(regPath.btnContinuar);
@@ -52,7 +49,7 @@ public class RegistroPage extends Base {
 
 
     public void llenarNombre(String nombre) throws InterruptedException {
-        regPage.espera("2000");
+        regPage.esperaPe("2000");
         regPage.type(nombre, regPath.firstName);
     }
 
@@ -64,6 +61,7 @@ public class RegistroPage extends Base {
         regPage.click(regPath.fechaCumple);
         regPage.elegir(mesCumple, regPath.mesCumple);
     }
+
     public void llenarañoCumple(String añoCumple) {
         regPage.elegir(añoCumple, regPath.añoCumple);
         regPage.click(regPath.diaCumple);
@@ -71,38 +69,38 @@ public class RegistroPage extends Base {
 
 
     public void llenarNacionalidad(String nacionalidad) {
-        regPage.elegir(nacionalidad,regPath.nacionalidad);
+        regPage.elegir(nacionalidad, regPath.nacionalidad);
     }
 
     public void llenardocumento(String documento) {
-        regPage.elegir(documento,regPath.documento);
+        regPage.elegir(documento, regPath.documento);
     }
 
     public void llenardocNumero(String docNumero) {
-        regPage.type(docNumero,regPath.docNumero);
+        regPage.type(docNumero, regPath.docNumero);
     }
 
     public void llenarsexo(String sexo) {
-        regPage.elegir(sexo,regPath.sexo);
+        regPage.elegir(sexo, regPath.sexo);
     }
 
     public void llenarnumCelular(String numCelular) {
-        regPage.type(numCelular,regPath.numCelular);
+        regPage.type(numCelular, regPath.numCelular);
     }
 
     public void llenaremail(String email) {
-        regPage.type(email,regPath.email);
+        regPage.type(email, regPath.email);
     }
 
     public void llenarconfirnEmail(String confirnEmail) {
-       regPage.type(confirnEmail,regPath.confirEmail);
-       regPage.click(regPath.agreeBtn);
+        regPage.type(confirnEmail, regPath.confirEmail);
+        regPage.click(regPath.agreeBtn);
     }
 
 
     public void llenarNombre2(String nombre2) throws InterruptedException {
         regPage.click(regPath.pasajero2Btn);
-        regPage.espera("2000");
+        regPage.esperaPe("2000");
         regPage.type(nombre2, regPath.firstName2);
     }
 
@@ -121,37 +119,37 @@ public class RegistroPage extends Base {
     }
 
     public void llenarNacionalidad2(String nacionalidad2) {
-        regPage.elegir(nacionalidad2,regPath.nacionalidad2);
+        regPage.elegir(nacionalidad2, regPath.nacionalidad2);
     }
 
     public void llenardocumento2(String documento2) {
-        regPage.elegir(documento2,regPath.documento2);
+        regPage.elegir(documento2, regPath.documento2);
     }
 
     public void llenardocNumero2(String docNumero2) {
-        regPage.type(docNumero2,regPath.docNumero2);
+        regPage.type(docNumero2, regPath.docNumero2);
     }
 
     public void llenarsexo2(String sexo2) {
-        regPage.elegir(sexo2,regPath.sexo2);
+        regPage.elegir(sexo2, regPath.sexo2);
     }
 
     public void llenarnumCelular2(String numCelular2) {
-        regPage.type(numCelular2,regPath.numCelular2);
+        regPage.type(numCelular2, regPath.numCelular2);
     }
 
     public void llenaremail2(String email2) {
-        regPage.type(email2,regPath.email2);
+        regPage.type(email2, regPath.email2);
     }
 
     public void llenarconfirnEmail2(String confirnEmail2) {
-        regPage.type(confirnEmail2,regPath.confirEmail2);
+        regPage.type(confirnEmail2, regPath.confirEmail2);
         regPage.click(regPath.agreeBtn2);
         regPage.click(regPath.continueBtn);
     }
 
     public void seleccionarMetodoPago() throws InterruptedException {
-        regPage.espera("2000");
+        regPage.esperaPe("2000");
         regPage.findElement(regPath.seleccionarTarjeta);
         regPage.click(regPath.seleccionarTarjeta);
         regPage.click(regPath.agreeBtnMetodoPago);
@@ -163,15 +161,42 @@ public class RegistroPage extends Base {
         regPage.click(regPath.enterCardNumber);
     }
 
-    /*public void validaciónDeDatos() {
-        regPage.click(regPath.ValidarCompra);
-        WebElement validarRuta = regPage.findElement(regPath.validarRuta);
-        Assert.assertEquals("Belmond Andean Explorer", validarRuta.getText());
-        WebElement validarFechaSalida = regPage.findElement(regPath.ValidarFechaSalida);
-        Assert.assertEquals("Wednesday 18 May 2022", validarFechaSalida.getText());
+    //TAREA2
+//    public boolean validaciónDeDestino(String destino) {
+//
+//        boolean flag = false;
+//
+//        return flag;
+//    }
 
-    } */
+
+    public boolean validaciónDeTren(String valueTren) throws InterruptedException {
+        boolean flag = false;
+        regPage.click(regPath.validarCompra);
+        regPage.esperaPe("2000");
+        String tren = regPage.getText(regPath.validarTren);
+        String parts[] = tren.split(" ");
+        String trenCompleto = parts[1] + " " + parts[2] + "," + " A " + parts[0] + " Train";
+        if (valueTren.equals(trenCompleto)) {
+            flag = true;
+        }
+        else {
+            flag = false;
+            System.out.println("validacion de tren incorrecta");
+        }
+        return flag;
+    }
+
+
+
+    //TAREA
+    public boolean validaciónDeRuta(String valueruta) {
+        boolean flag = false;
+        String ruta = regPage.getText(regPath.validarRuta);
+        System.out.println(ruta.trim());
+        String parts[] = ruta.split(" ");
+        return flag;
+    }
 }
-
 
 

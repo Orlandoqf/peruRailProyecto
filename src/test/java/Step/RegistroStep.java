@@ -3,6 +3,7 @@ package Step;
 import Base.Base;
 import Page.RegistroPage;
 import io.cucumber.datatable.DataTable;
+import org.junit.Assert;
 
 public class RegistroStep {
 
@@ -76,9 +77,6 @@ public class RegistroStep {
         regPage.llenarnumCelular2(numCelular2);
         regPage.llenaremail2(email2);
         regPage.llenarconfirnEmail2(confirnEmail2);
-
-
-
     }
 
     public void seleccionarMetodoPago() throws InterruptedException {
@@ -89,7 +87,14 @@ public class RegistroStep {
         regPage.clickBtnEntrarNumero();
     }
 
-    public void validaciónDeDatos(){
-        //regPage.validaciónDeDatos();
+    public void validaciónDeDatos(DataTable dataTable) throws InterruptedException {
+        String destino = Base.getValueFromDataTable(dataTable,"destino");
+        String ruta = Base.getValueFromDataTable(dataTable,"ruta");
+        String tren = Base.getValueFromDataTable(dataTable,"tren");
+
+//        Assert.assertTrue(regPage.validaciónDeDestino(destino));
+        Assert.assertTrue(regPage.validaciónDeTren(tren));
+        Assert.assertTrue(regPage.validaciónDeRuta(ruta));
+
     }
 }

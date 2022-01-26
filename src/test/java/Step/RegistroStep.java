@@ -101,4 +101,8 @@ public class RegistroStep {
         Assert.assertTrue(regPage.validaciónDeRuta(ruta));
 
     }
+
+    public void elegirFechaDelSegundoViaje() throws InterruptedException {
+        regPage.elegirFechaDelSegundoViaje();
+    }
 }

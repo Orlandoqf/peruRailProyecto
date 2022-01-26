@@ -14,6 +14,7 @@ public class RegistroPath extends Base {
     public By elegirFecha = By.id("date1");
     public By elegirMes = By.xpath("//*[@id=\"ui-datepicker-div\"]/div/div/select[1]");
     public By elegirDia = By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[3]/td[4]/a");
+    public By elegirDiaDos = By.xpath("//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[3]/td[7]/a");
     public By btnTicket = By.id("btn_search_bae");
     public By elegirCabina = By.xpath("//*[@id=\"frm_viajes_bae\"]/div[3]/div[2]/div[2]/div[3]/div/div[1]/select");
     public By elegirCantidadAdultos = By.xpath("//*[@id=\"suite\"]/div/div[2]/div[1]/select");

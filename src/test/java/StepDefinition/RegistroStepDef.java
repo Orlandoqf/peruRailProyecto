@@ -27,6 +27,11 @@ public class RegistroStepDef {
         regStep.elegirFecha();
     }
 
+    @Entonces("elijo la fecha del segundo viaje")
+    public void elijoLaFechaDelSegundoViaje() throws InterruptedException {
+        regStep.elegirFechaDelSegundoViaje();
+    }
+
     @Y("la cantidad de cabinas  y doy click en el boton continuar")
     public void laCantidadDeCabinasYDoyClickEnElBotonContinuar(DataTable dataTable) throws InterruptedException {
         regStep.elegirPasajes(dataTable);
@@ -52,4 +57,7 @@ public class RegistroStepDef {
     public void verificoLasCantidadesYLosDatosIngresadosEnLaCompra(DataTable dataTable) throws InterruptedException {
         regStep.validaciónDeDatos(dataTable);
     }
+
+
+
 }

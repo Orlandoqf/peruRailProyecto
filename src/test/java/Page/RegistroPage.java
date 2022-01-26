@@ -40,6 +40,14 @@ public class RegistroPage extends Base {
         regPage.click(regPath.btnTicket);
     }
 
+    public void elegirFechaDelSegundoViaje() throws InterruptedException {
+        regPage.esperaPe("2000");
+        regPage.click(regPath.elegirFecha);
+        regPage.elegir("4", regPath.elegirMes);
+        regPage.click(regPath.elegirDiaDos);
+        regPage.click(regPath.btnTicket);
+    }
+
     public void elegirPasajes(String valueCabina, String valueAdultos, String valueNiños) throws InterruptedException {
         regPage.esperaPe("2000");
         regPage.elegir(valueCabina, regPath.elegirCabina);
@@ -194,7 +202,6 @@ public class RegistroPage extends Base {
     public boolean validaciónDeRuta(String valueRuta) {
         boolean flag = false;
         String ruta = regPage.getText(regPath.validarRuta);
-        System.out.println(ruta.trim());
         String parts[] = ruta.split(" ");
 
         String puno = parts[0].replace("(","");
@@ -210,6 +217,7 @@ public class RegistroPage extends Base {
         return flag;
 
     }
+
 
 
 }
